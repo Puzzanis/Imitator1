@@ -4,10 +4,15 @@ import pandas as pd
 import Imitator
 
 
+def read_Excel(file, sheets):
+    df = pd.read_excel(file, sheets)
+    return df
+
+
 def func(name, sheet):
     a = Imitator.imitator()
     lis_t = []
-    df = pd.read_excel(name, sheet)
+    df_list = read_Excel(name, sheet)
     with open('Imitator.imod', 'w', encoding='cp1251') as out:
         csv_out = out.write(a)
     return df
